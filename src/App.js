@@ -7,11 +7,11 @@ import NavBar from './NavBar'
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
       <NavBar/>
+      {/* <header className="App-header">
         <h1>Välkommen till min React App</h1>
         <p>Detta är startsidan.</p>
-      </header>
+      </header> */}
       <ApiComponent/>
     </div>
   );
