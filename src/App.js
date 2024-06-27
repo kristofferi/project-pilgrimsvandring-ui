@@ -1,19 +1,22 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import ApiComponent from './ApiComponent';
-import NavBar from './NavBar'
+import PointOfInterestComponent from './PointOfInterestComponent';
+import NavBar from './NavBar';
+import Home from './Home';
 
 function App() {
   return (
-    <div className="App">
-      <NavBar/>
-      {/* <header className="App-header">
-        <h1>Välkommen till min React App</h1>
-        <p>Detta är startsidan.</p>
-      </header> */}
-      <ApiComponent/>
-    </div>
+    <Router>
+      <div className="App">
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/poi" element={<PointOfInterestComponent />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
