@@ -5,6 +5,7 @@ import './App.css';
 import PointOfInterestComponent from './PointOfInterestComponent';
 import NavBar from './NavBar';
 import Home from './Home';
+import WanderersList from './WanderersList';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/poi" element={<PointOfInterestComponent />} />
+          <Route path="wanderers-list" element={<WanderersList/>} />
         </Routes>
       </div>
     </Router>

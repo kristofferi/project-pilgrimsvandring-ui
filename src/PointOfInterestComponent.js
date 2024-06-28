@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Container, Row, Col, Card, Spinner, Alert, Pagination, Collapse, Button, Form } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
+import './CustomStyles.css'; // Importera CSS-filen
 
 function ApiComponent() {
   const [data, setData] = useState([]);
@@ -68,13 +69,13 @@ function ApiComponent() {
 
   return (
     <Container>
-      <h2 className="my-4">Points of Interest</h2>
+      <h1 className="my-4">Saker att se (sevärdheter)</h1>
       {error && <Alert variant="danger">Error: {error}</Alert>}
       
-      <Form.Group controlId="categorySelect">
-        <Form.Label>Select a category:</Form.Label>
+      <Form.Group controlId="categorySelect" className="category-select">
+        <Form.Label className="label-block">Filtrera på kategori:</Form.Label>
         <Form.Control as="select" value={selectedCategory} onChange={handleCategoryChange}>
-          <option value="">All Categories</option>
+          <option value="">Alla kategorier</option>
           {categories.map((category) => (
             <option key={category} value={category}>
               {category}

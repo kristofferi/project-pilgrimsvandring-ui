@@ -1,0 +1,9 @@
+/* src/CustomStyles.css */
+.label-block {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  .category-select {
+    padding: 20px; /* Lägg till utrymme under kategoriväljaren */
+  }

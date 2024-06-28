@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import Button from 'react-bootstrap/Button';
 import RegisterForm from './RegisterForm';
 import LoginForm from './LoginForm';
@@ -11,6 +10,8 @@ import LoginForm from './LoginForm';
 function NavBar() {
   const [showRegister, setShowRegister] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
+  const [expanded, setExpanded] = useState(false); // Tillstånd för att hantera menyns expansion
+  const location = useLocation();
 
   const handleShowRegister = () => setShowRegister(true);
   const handleShowLogin = () => setShowLogin(true);
@@ -20,26 +21,21 @@ function NavBar() {
     setShowLogin(false);
   };
 
+  const handleToggle = () => setExpanded(!expanded);
+  const handleCloseMenu = () => setExpanded(false);
+
   return (
     <div>
-      <Navbar expand="lg" className="bg-body-tertiary">
+      <Navbar expand="lg" className="bg-body-tertiary" expanded={expanded}>
         <Container>
-          <Navbar.Brand as={Link} to="/">React-Bootstrap</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Brand as={Link} to="/" onClick={handleCloseMenu}>Hem</Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={handleToggle} />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link as={Link} to="/">Home</Nav.Link>
-              <Nav.Link as={Link} to="/poi">Point of Interest</Nav.Link>
-              <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                <NavDropdown.Item as={Link} to="/action/3.1">Action</NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/action/3.2">Another action</NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/action/3.3">Something</NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item as={Link} to="/action/3.4">Separated link</NavDropdown.Item>
-              </NavDropdown>
+              <Nav.Link as={Link} to="/poi" onClick={handleCloseMenu}>Saker att se (sevärdheter)</Nav.Link>
             </Nav>
-            <Button variant="primary" onClick={handleShowRegister} className="me-2">Register</Button>
-            <Button variant="secondary" onClick={handleShowLogin}>Login</Button>
+            <Button variant="primary" onClick={handleShowRegister} className="me-2">Registrera dig</Button>
+            <Button variant="secondary" onClick={handleShowLogin}>Logga in</Button>
           </Navbar.Collapse>
         </Container>
       </Navbar>
