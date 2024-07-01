@@ -6,6 +6,7 @@ import PointOfInterestComponent from './PointOfInterestComponent';
 import NavBar from './NavBar';
 import Home from './Home';
 import WanderersList from './WanderersList';
+import EventsList from './EventsList'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/poi" element={<PointOfInterestComponent />} />
           <Route path="wanderers-list" element={<WanderersList/>} />
+          <Route path="events" element={<EventsList/>} />
         </Routes>
       </div>
     </Router>
