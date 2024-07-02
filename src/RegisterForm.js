@@ -25,15 +25,14 @@ function RegisterForm({ onClose }) {
             <Form.Label>Bekräfta lösenord</Form.Label>
             <Form.Control type="password" placeholder="Confirm Password" />
           </Form.Group>
-
           <Button variant="primary" type="submit">
-            Spara
+            Stäng
           </Button>
         </Form>
       </Modal.Body>
       <Modal.Footer>
         <Button variant="secondary" onClick={onClose}>
-          Stäng
+          Avbryt
         </Button>
       </Modal.Footer>
     </Modal>

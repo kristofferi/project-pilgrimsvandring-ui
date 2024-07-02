@@ -6,6 +6,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import RegisterForm from './RegisterForm';
 import LoginForm from './LoginForm';
+import Foto from './Foto';
 
 function NavBar() {
   const [showRegister, setShowRegister] = useState(false);
@@ -32,8 +33,9 @@ function NavBar() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={handleToggle} />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link as={Link} to="/poi" onClick={handleCloseMenu}>Saker att se (sevärdheter)</Nav.Link>
-              <Nav.Link as={Link} to="/events" onClick={handleCloseMenu}>Events</Nav.Link>
+            <Nav.Link as={Link} to="/poi" onClick={handleCloseMenu}>Saker att se (sevärdheter)</Nav.Link>
+            <Nav.Link as={Link} to="/events" onClick={handleCloseMenu}>Events</Nav.Link>
+            <Nav.Link as={Link} to="/Foto">Foto</Nav.Link> {Foto}
             </Nav>
             <Button variant="primary" onClick={handleShowRegister} className="me-2">Registrera dig</Button>
             <Button variant="secondary" onClick={handleShowLogin}>Logga in</Button>
