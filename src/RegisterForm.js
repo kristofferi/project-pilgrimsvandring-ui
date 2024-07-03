@@ -7,7 +7,7 @@ function RegisterForm({ onClose }) {
   return (
     <Modal show onHide={onClose}>
       <Modal.Header closeButton>
-        <Modal.Title>Registrera</Modal.Title>
+        <Modal.Title>Registrera dig</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form>
@@ -25,8 +25,8 @@ function RegisterForm({ onClose }) {
             <Form.Label>Bekräfta lösenord</Form.Label>
             <Form.Control type="password" placeholder="Confirm Password" />
           </Form.Group>
-          <Button variant="primary" type="submit">
-            Stäng
+                  <Button variant="primary" type="submit" className="mt-3">
+            Spar
           </Button>
         </Form>
       </Modal.Body>

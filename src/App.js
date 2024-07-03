@@ -8,6 +8,7 @@ import Home from './Home';
 import WanderersList from './WanderersList';
 import EventsList from './EventsList'
 import Foto from './Foto';
+import Information from './Information';
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
           <Route path="/poi" element={<PointOfInterestComponent />} />
           <Route path="wanderers-list" element={<WanderersList/>} />
           <Route path="events" element={<EventsList />} />
-          <Route path="Foto" element={<Foto/>} />
+          <Route path="foto" element={<Foto/>} />
+          <Route path="information" element={<Information/>} />
         </Routes>
       </div>
     </Router>

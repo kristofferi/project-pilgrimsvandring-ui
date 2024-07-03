@@ -10,7 +10,7 @@ function LoginForm({ onClose }) {
   const handleSubmit = (event) => {
     event.preventDefault();
     // Här kan du lägga till din inloggningslogik
-    navigate('/wanderers-list'); // Ersätt '/wanderers-list' med din destination
+    navigate('/wanderers-list'); // Ersätt '/wanderers-list' med din destination om vi skall ha detta i portalen
   };
 
   return (
@@ -37,7 +37,7 @@ function LoginForm({ onClose }) {
       </Modal.Body>
       <Modal.Footer>
         <Button variant="secondary" onClick={onClose}>
-          Stäng
+          Avbryt
         </Button>
       </Modal.Footer>
     </Modal>
