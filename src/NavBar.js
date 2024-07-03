@@ -8,12 +8,12 @@ import RegisterForm from './RegisterForm';
 import LoginForm from './LoginForm';
 import Foto from './Foto';
 
-function NavBar() {
+function NavBar({ isLoggedIn }) {
   const [showRegister, setShowRegister] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
   const [expanded, setExpanded] = useState(false); // Tillstånd för att hantera menyns expansion
   const location = useLocation();
-
+ // const [isLoggedIn, setIsLoggedIn] = useState(false);
   const handleShowRegister = () => setShowRegister(true);
   const handleShowLogin = () => setShowLogin(true);
 
@@ -32,15 +32,32 @@ function NavBar() {
           <Navbar.Brand as={Link} to="/" onClick={handleCloseMenu}>Hem</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={handleToggle} />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-            <Nav.Link as={Link} to="/poi" onClick={handleCloseMenu}>Saker att se (sevärdheter)</Nav.Link>
+                      <Nav className="me-auto">
+                          {isLoggedIn ? (
+                              <>
+                                  <Nav.Link as={Link} to="/wanderers-list" onClick={handleCloseMenu}>Team</Nav.Link>
+                                  <Nav.Link as={Link} to="/mina minnen" onClick={handleCloseMenu}>Mina minnen</Nav.Link>
+                                  <Button variant="secondary" onClick={handleShowLogout}>Logga ut</Button>
+                              </>
+                          ) : (
+                                  <>
+                                      <Nav.Link as={Link} to="/poi" onClick={handleCloseMenu}>Saker att se (sevärdheter)</Nav.Link>
+                                      <Nav.Link as={Link} to="/events" onClick={handleCloseMenu}>Events</Nav.Link>
+                                      <Nav.Link as={Link} to="/foto" onClick={handleCloseMenu}> Foto</Nav.Link>
+                                      <Nav.Link as={Link} to="/information" onClick={handleCloseMenu}> Information</Nav.Link> 
+                                      <Button variant="primary" onClick={handleShowRegister} className="me-2">Registrera dig</Button>
+                                      <Button variant="secondary" onClick={handleShowLogin}>Logga in</Button>
+                              </>
+                          )}
+                          {/* <Nav.Link as={Link} to="/poi" onClick={handleCloseMenu}>Saker att se (sevärdheter)</Nav.Link>
             <Nav.Link as={Link} to="/wanderers-list" onClick={handleCloseMenu}>Team</Nav.Link>
             <Nav.Link as={Link} to="/events" onClick={handleCloseMenu}>Events</Nav.Link>
             <Nav.Link as={Link} to="/foto" onClick={handleCloseMenu}> Foto</Nav.Link> 
             <Nav.Link as={Link} to="/information" onClick={handleCloseMenu}> Information</Nav.Link> 
             </Nav>
             <Button variant="primary" onClick={handleShowRegister} className="me-2">Registrera dig</Button>
-            <Button variant="secondary" onClick={handleShowLogin}>Logga in</Button>
+            <Button variant="secondary" onClick={handleShowLogin}>Logga in</Button>*/}
+                      </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
