@@ -7,12 +7,13 @@ import Form from 'react-bootstrap/Form';
 function LoginForm({ onClose }) {
   const navigate = useNavigate();
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+ const handleSubmit = (event) => {
+    //event.preventDefault();
     // Här kan du lägga till din inloggningslogik
-    navigate('/wanderers-list'); // Ersätt '/wanderers-list' med din destination om vi skall ha detta i portalen
-  };
+     navigate('/'); // Ersätt '/wanderers-list' med din destination om vi skall ha detta i portalen
 
+  };
+  
   return (
     <Modal show onHide={onClose}>
       <Modal.Header closeButton>
@@ -29,8 +30,7 @@ function LoginForm({ onClose }) {
             <Form.Label>Lösenord</Form.Label>
             <Form.Control type="password" placeholder="Password" />
           </Form.Group>
-
-          <Button variant="primary" type="submit" className="w-100 mb-3">
+           <Button variant="primary" type="submit" className="w-100 mb-3">
             Logga in
           </Button>
         </Form>
