@@ -41,7 +41,7 @@ function App() {
           isLoggedIn={isLoggedIn}
           onShowRegister={handleShowRegister}
           onShowLogin={handleShowLogin}
-          onLogout={handleLogout}
+          onLogout={handleLogout} // onLogout skickas som en prop till NavBar
         />
         <Routes>
           <Route path="/" element={<Home />} />

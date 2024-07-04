@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -7,11 +7,16 @@ import Button from 'react-bootstrap/Button';
 
 function NavBar({ isLoggedIn, onShowRegister, onShowLogin, onLogout }) {
   const [expanded, setExpanded] = useState(false);
-  const location = useLocation();
+  const navigate = useNavigate();
 
   const handleToggle = () => setExpanded(!expanded);
   const handleCloseMenu = () => setExpanded(false);
 
+  const handleLogout = () => {
+    onLogout();
+    navigate('/');
+  }
+  
   return (
     <Navbar expand="lg" className="bg-body-tertiary" expanded={expanded}>
       <Container>
@@ -27,7 +32,7 @@ function NavBar({ isLoggedIn, onShowRegister, onShowLogin, onLogout }) {
                 <Nav.Link as={Link} to="/information" onClick={handleCloseMenu}>Information</Nav.Link>
                 <Nav.Link as={Link} to="/wanderers-list" onClick={handleCloseMenu}>Team</Nav.Link>
                 <Nav.Link as={Link} to="/mina-minnen" onClick={handleCloseMenu}>Mina minnen</Nav.Link>
-                <Button variant="secondary" onClick={onLogout}>Logga ut</Button>
+                <Button variant="secondary" onClick={handleLogout}>Logga ut</Button>
               </>
             ) : (
               <>
