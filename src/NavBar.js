@@ -16,7 +16,7 @@ function NavBar({ isLoggedIn, onShowRegister, onShowLogin, onLogout }) {
     onLogout();
     navigate('/');
   }
-  
+ 
   return (
     <Navbar expand="lg" className="bg-body-tertiary" expanded={expanded}>
       <Container>
