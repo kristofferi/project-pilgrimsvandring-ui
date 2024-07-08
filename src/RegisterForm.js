@@ -1,16 +1,25 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
 function RegisterForm({ onClose }) {
+    const navigate = useNavigate();
+
+    const handleSubmit = (event) => {
+        //event.preventDefault();
+        navigate('/'); // Ersätt '/wanderers-list' med din destination om vi skall ha detta i portalen
+
+    };
+
   return (
     <Modal show onHide={onClose}>
       <Modal.Header closeButton>
-        <Modal.Title>Registrera</Modal.Title>
+        <Modal.Title>Registrera dig</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <Form>
+         <Form onSubmit={handleSubmit}>
           <Form.Group controlId="formBasicEmail">
             <Form.Label>Mejl</Form.Label>
             <Form.Control type="email" placeholder="Enter email" />
@@ -25,15 +34,14 @@ function RegisterForm({ onClose }) {
             <Form.Label>Bekräfta lösenord</Form.Label>
             <Form.Control type="password" placeholder="Confirm Password" />
           </Form.Group>
-
-          <Button variant="primary" type="submit">
-            Spara
+            <Button variant="primary" type="submit" className="mt-3">
+            Spar
           </Button>
         </Form>
       </Modal.Body>
       <Modal.Footer>
         <Button variant="secondary" onClick={onClose}>
-          Stäng
+          Avbryt
         </Button>
       </Modal.Footer>
     </Modal>

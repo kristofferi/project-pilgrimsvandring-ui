@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
-function LoginForm({ onClose }) {
-  const navigate = useNavigate();
+function LoginForm({ onClose, onLogin }) {
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Här kan du lägga till din inloggningslogik
-    navigate('/wanderers-list'); // Ersätt '/wanderers-list' med din destination
+  const navigate = useNavigate();
+  const formRef = useRef(null);
+
+  const handleLogin = () => {
+    onLogin();
+    navigate('/');
+    onClose();
   };
 
   return (
@@ -19,7 +21,7 @@ function LoginForm({ onClose }) {
         <Modal.Title>Logga in</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <Form onSubmit={handleSubmit}>
+        <Form ref={formRef} onSubmit={handleLogin}>
           <Form.Group controlId="formBasicEmail" className="mb-3">
             <Form.Label>Mejl</Form.Label>
             <Form.Control type="email" placeholder="Enter email" />
@@ -29,15 +31,14 @@ function LoginForm({ onClose }) {
             <Form.Label>Lösenord</Form.Label>
             <Form.Control type="password" placeholder="Password" />
           </Form.Group>
-
-          <Button variant="primary" type="submit" className="w-100 mb-3">
+          <Button variant="primary" type="submit" className="mt-3">
             Logga in
           </Button>
         </Form>
       </Modal.Body>
       <Modal.Footer>
         <Button variant="secondary" onClick={onClose}>
-          Stäng
+          Avbryt
         </Button>
       </Modal.Footer>
     </Modal>
