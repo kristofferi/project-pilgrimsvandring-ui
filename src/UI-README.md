@@ -18,12 +18,12 @@ __**Team: Pilgrimsled**__
 Detta är en UI applikation till projektet pilmgrimsvandring. Det som är implementerat i frontend-applikationen är en navigationsbar för lägena ej inloggad och inloggad samt möjlighet att registrera sig som användare av portalen. Detta är gjort för att kunna inleda  användartester som skall leda till ett önskat gränssnitt. Frontendapplikation skall även användas för att göra tester kring förändringar i API:et. Projektet utvecklas löpande och senaste branch förändringar har gjorts i branch Test2.
 
 ## Navigationsbar
-Vi har använt react och bootstrap för navigationsbaren. För att byta läge mellan inloggad och icke inloggad så används log-in knappen. Då nu detta är för att vidareutveckla och testa gränssnitt kommer man vidare genom att bara trycka på bekräfta inloggningen. Eftersom detta även gäller för registrering, trycker man där endast på "spar" för att simulera en registrering. 
+Vi har använt react och bootstrap för navigationsbaren. För att byta läge mellan inloggad och icke inloggad så används log-in knappen. Då nu detta är för att vidareutveckla och testa gränssnitt kommer man vidare genom att bara trycka på bekräfta inloggningen. Eftersom detta även gäller för registrering, trycker man där endast på "spar" för att simulera en registrering. Vid registrering bör fälten fyllas i, annars kommer ett felmeddelande. 
 
 I navigationsbaren visas att man vid inloggat läge har utökad funktionalitet. Exempel på funktionaliteten som ska finnas i utökat läge är att hantera sina team samt göra reseplaneringen.
 
 ## API
-I projektets backend finns ett API med endpoints.  I vår frontend testar vi av dessa endpoints. Vi kan även göra användartester för att se hur vi kan behöva förändra vårt API utifrån vår frontend-applikation. 
+I projektets backend finns ett API med endpoints.  I vår frontend testar vi av dessa endpoints. Vi kan även göra användartester för att se hur vi kan behöva förändra vårt API utifrån vår frontend-applikation. Informationen som visas är mock-data, där endpointen för sevärdigheter har utvecklats mest.
 
 ## Vad ska vidareutvecklas
 Vi behöver lösa inloggning för samtliga intressenter av portalen i frontend-applikationen. Just nu finns det en skiss över det grafiska utseendet för inloggningen. Samma sak gäller möjligheten att registrera sig som intressent i portalen.
