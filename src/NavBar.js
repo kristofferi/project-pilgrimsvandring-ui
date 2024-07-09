@@ -30,6 +30,7 @@ function NavBar({ isLoggedIn, onShowRegister, onShowLogin, onLogout }) {
                 <Nav.Link as={Link} to="/events" onClick={handleCloseMenu}>Events</Nav.Link>
                 <Nav.Link as={Link} to="/foto" onClick={handleCloseMenu}>Foto</Nav.Link>
                 <Nav.Link as={Link} to="/information" onClick={handleCloseMenu}>Information</Nav.Link>
+                <Nav.Link as={Link} to="/karta" onClick={handleCloseMenu}>Karta</Nav.Link>
                 <Nav.Link as={Link} to="/wanderers-list" onClick={handleCloseMenu}>Team</Nav.Link>
                 <Nav.Link as={Link} to="/mina-minnen" onClick={handleCloseMenu}>Mina minnen</Nav.Link>
                 <Button variant="secondary" onClick={handleLogout}>Logga ut</Button>
@@ -40,6 +41,7 @@ function NavBar({ isLoggedIn, onShowRegister, onShowLogin, onLogout }) {
                 <Nav.Link as={Link} to="/events" onClick={handleCloseMenu}>Events</Nav.Link>
                 <Nav.Link as={Link} to="/foto" onClick={handleCloseMenu}>Foto</Nav.Link>
                 <Nav.Link as={Link} to="/information" onClick={handleCloseMenu}>Information</Nav.Link>
+                <Nav.Link as={Link} to="/karta" onClick={handleCloseMenu}>Karta</Nav.Link>
                 <Button variant="primary" onClick={onShowRegister} className="me-2">Registrera dig</Button>
                 <Button variant="secondary" onClick={onShowLogin}>Logga in</Button>
               </>
