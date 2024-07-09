@@ -30,14 +30,9 @@ Vi behöver lösa inloggning för samtliga intressenter av portalen i frontend-a
 
 Denna begränsning beror idag på att backend inte har någon databas. Denna behövs för att kunna genomföra registrering och inloggning.
 
+## Hur man installerar:
+Man behöver en IDE för att arbeta mot projektet. Vi rekommenderar Visual Studio. Starta Visual Studio (eller annan IDE som du finner lämplig) och klona ner projektet till lämplig katalog.
+Se till att node.js är installerat på datorn och att sökvägar är korrekt uppsatta. Installera node.js i biblioteket där du vill köra projektet genom att i prompten i denna aktuella katalog skriva npm install. Detta bör skapa upp de dependencies du behöver. Vid vidareutveckling kan flera dependencies komma att behöva läggas till.
+
 ## Hur man kör frontend-applikationen
-För att köra frontend-applikationen börjar man med att starta upp backend-projektet som finns på https://github.com/systemvetenskap/projekt-pilgrimsvandring/tree/per4ai-features-v2.8 Detta ska vara klonat till din lokala dator. Det enklaste alternativet att starta backend är att köra debug-läget i visual studio. Efter detta är uppstartat kör man även igång frontend-projektet i debug-läget.
-
-## Using the Command Line with .NET CLI:
-
-1. **Install the .NET 8 SDK:** Download and install the .NET 8 SDK from the official Microsoft website [download .NET SDK]. This provides the necessary tools for running .NET applications.
-2. **Navigate to your project directory:** Open a command prompt or terminal and navigate to the directory containing your C# project files.
-3. **Restore dependencies:** Use the `dotnet restore` command to download any required libraries your project depends on.
-4. **Build the project:** Use the `dotnet build` command to compile your C# code into an executable file.
-5. **Run the application:**  You can use the `dotnet run` command followed by the project file name (e.g., `dotnet run Pilgrimsvandring.csproj`).
-6. **Access to application:**   `http://localhost:5023/swagger/index.html`
+För att köra frontend-applikationen börjar man med att starta upp backend-projektet som finns på https://github.com/systemvetenskap/projekt-pilgrimsvandring/tree/per4ai-features-v2.8 Detta ska vara klonat till din lokala dator. Det enklaste alternativet att starta backend är att köra debug-läget i visual studio. Efter detta är uppstartat kör man även igång frontend-projektet i debug-läget. Därefter startas frontend-applikationen genom att man i kommando-promp i aktuell katalog för denna skriver npm start.
