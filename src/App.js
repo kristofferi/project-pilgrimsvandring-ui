@@ -11,6 +11,7 @@ import Foto from './Foto';
 import Information from './Information';
 import RegisterForm from './RegisterForm';
 import LoginForm from './LoginForm';
+import MapComponent from './Components/MapComponent';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -50,6 +51,7 @@ function App() {
           <Route path="events" element={<EventsList />} />
           <Route path="foto" element={<Foto />} />
           <Route path="information" element={<Information />} />
+          <Route path="karta" element={<MapComponent />} />
         </Routes>
         {showRegister && <RegisterForm onClose={handleCloseForms} />}
         {showLogin && <LoginForm onClose={handleCloseForms} onLogin={handleLogin} />}
